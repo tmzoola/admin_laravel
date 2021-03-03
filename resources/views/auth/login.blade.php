@@ -1,4 +1,4 @@
-@extends('layouts.app', ['class' => 'login-page', 'page' => 'Admin Panel', 'contentClass' => 'login-page', 'section' => 'auth'])
+@extends('layouts.app', ['class' => 'login-page', 'page' => 'Login', 'contentClass' => 'login-page', 'section' => 'auth'])
 
 @section('content')
     <div class="col-lg-4 col-md-6 ml-auto mr-auto">
@@ -36,11 +36,11 @@
                             <a href="{{ route('register') }}" class="link footer-link">Create Account</a>
                         </h6>
                     </div>
-                    {{-- <div class="pull-right">
-                        <h6>
-                            <a href="{{ route('password.request') }}" class="link footer-link">I forgot the passwod</a>
-                        </h6>
-                    </div> --}}
+{{--                    <div class="pull-right">--}}
+{{--                        <h6>--}}
+{{--                            <a href="{{ route('password.request') }}" class="link footer-link">I forgot the passwod</a>--}}
+{{--                        </h6>--}}
+{{--                    </div>--}}
                 </div>
             </div>
         </form>

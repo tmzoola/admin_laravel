@@ -1,11 +1,10 @@
-@extends('layouts.app', ['class' => 'register-page', 'page' => 'Laravel Inventory', 'contentClass' => 'register-page', 'section' => 'auth'])
+@extends('layouts.app', ['class' => 'register-page', 'page' => 'Admin Panel', 'contentClass' => 'register-page', 'section' => 'auth'])
 
 @section('content')
     <div class="row">
         <div class="col-md-7 ml-auto mr-auto">
             <div class="card card-register card-white">
-                <div class="card-header">
-                    <img class="card-img" src="{{ asset('assets') }}/img/card-primary.png" alt="Card image">
+                <div class="card-header" style="padding: 0">
                     <h4 class="card-title">Register</h4>
                 </div>
                 <form class="form" method="post" action="{{ route('register') }}">
@@ -46,14 +45,6 @@
                                 </div>
                             </div>
                             <input type="password" name="password_confirmation" class="form-control" placeholder="Repeat Password">
-                        </div>
-                        <div class="form-check text-left {{ $errors->has('password') ? ' has-danger' : '' }}">
-                            <label class="form-check-label">
-                                <input class="form-check-input {{ $errors->has('agree_terms_and_conditions') ? ' is-invalid' : '' }}" name="agree_terms_and_conditions"  type="checkbox"  {{ old('agree_terms_and_conditions') ? 'checked' : '' }}>
-                                <span class="form-check-sign"></span>
-                                I confirm that I am human.
-                                @include('alerts.feedback', ['field' => 'agree_terms_and_conditions'])
-                            </label>
                         </div>
                     </div>
                     <div class="card-footer">

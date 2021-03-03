@@ -1,4 +1,4 @@
-@extends('layouts.app', ['class' => 'login-page', 'page' => 'Laravel Inventory', 'contentClass' => 'login-page', 'section' => 'auth'])
+@extends('layouts.app', ['class' => 'login-page', 'page' => 'Admin Panel', 'contentClass' => 'login-page', 'section' => 'auth'])
 
 @section('content')
     <div class="col-lg-4 col-md-6 ml-auto mr-auto">
@@ -6,8 +6,7 @@
             @csrf
 
             <div class="card card-login card-white">
-                <div class="card-header">
-                    <img src="{{ asset('assets') }}/img/card-primary.png" alt="">
+                <div class="card-header" style="padding: 0">
                     <h1 class="card-title">Login</h1>
                 </div>
                 <div class="card-body">

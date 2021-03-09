@@ -4,6 +4,7 @@ use Illuminate\Database\Seeder;
 use App\User;
 use Illuminate\Support\Facades\DB;
 use App\Models\Role;
+use Illuminate\Support\Facades\Hash;
 
 class UsersTableSeeder extends Seeder
 {
@@ -24,19 +25,19 @@ class UsersTableSeeder extends Seeder
         $admin = User::create([
             'name'=>'Admin',
             'email'=>'admin@admin.com',
-            'password'=>\Illuminate\Support\Facades\Hash::make('password')
+            'password'=>Hash::make('password')
         ]);
 
         $author  = User::create([
             'name'=>'Author',
             'email'=>'author@author.com',
-            'password'=>\Illuminate\Support\Facades\Hash::make('password')
+            'password'=>Hash::make('password')
         ]);
 
         $user = User::create([
             'name'=>'User',
             'email'=>'user@user.com',
-            'password'=>\Illuminate\Support\Facades\Hash::make('password')
+            'password'=>Hash::make('password')
         ]);
 
         $admin->roles()->attach($adminRole);

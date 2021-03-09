@@ -16,10 +16,11 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-Route::get('/', 'HomeController@index')->name('home')->middleware('auth');
 
-Route::group(['middleware' => 'auth'], function () {
+Route::get('/', 'HomeController@action')->name('home')->middleware('auth');
 
+Route::group(['middleware' => 'can:manage-users'], function () {
+    Route::get('/admin', 'HomeController@index')->name('admin')->middleware('auth');
     Route::resources([
         'users' => 'UserController'
     ]);

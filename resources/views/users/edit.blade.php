@@ -15,7 +15,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="card-body">
                         <form method="post" action="{{ route('users.update', $user) }}" autocomplete="off">
                             @csrf
@@ -42,7 +42,16 @@
                                     <label class="form-control-label" for="input-password-confirmation">{{ __('Confirm Password') }}</label>
                                     <input type="password" name="password_confirmation" id="input-password-confirmation" class="form-control form-control-alternative" placeholder="{{ __('Confirm Password') }}" value="">
                                 </div>
+                                @foreach($roles as $role)
 
+                                <div class="form-group">
+                                    <div class="form-check" >
+                                        <input type="checkbox" style="visibility: visible; opacity: 2; position: static" name="role[]" value="{{($role->id)}}"
+                                        @if($user->roles()->pluck('role_id')->contains($role->id)) checked @endif>
+                                        <label>{{$role->name}}</label>
+                                    </div>
+                                </div>
+                                @endforeach
                                 <div class="text-center">
                                     <button type="submit" class="btn btn-success mt-4">{{ __('Save') }}</button>
                                 </div>

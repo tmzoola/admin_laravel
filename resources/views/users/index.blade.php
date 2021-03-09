@@ -23,6 +23,7 @@
                                 <th scope="col">{{ __('Name') }}</th>
                                 <th scope="col">{{ __('Email') }}</th>
                                 <th scope="col">{{ __('Creation Date') }}</th>
+                                <th scope="col">{{ __('User Roles') }}</th>
                                 <th scope="col"></th>
                             </thead>
                             <tbody>
@@ -33,6 +34,8 @@
                                             <a href="mailto:{{ $user->email }}">{{ $user->email }}</a>
                                         </td>
                                         <td>{{ $user->created_at->format('d/m/Y H:i') }}</td>
+                                        <td>{{ implode(', ', $user->roles()->get()->pluck('name')->toArray())}}</td>
+                                        @can('edit-users')
                                         <td class="text-right">
                                                 <div class="dropdown">
                                                     <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -55,6 +58,7 @@
                                                     </div>
                                                 </div>
                                         </td>
+                                        @endcan
                                     </tr>
                                 @endforeach
                             </tbody>

@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Role;
 use App\User;
+use Illuminate\Support\Facades\Gate;
 use App\Http\Requests\UserRequest;
 use Illuminate\Support\Facades\Hash;
 
@@ -51,11 +53,15 @@ class UserController extends Controller
      * Show the form for editing the specified user
      *
      * @param  \App\User  $user
-     * @return \Illuminate\View\View
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\RedirectResponse|\Illuminate\View\View
      */
     public function edit(User $user)
     {
-        return view('users.edit', compact('user'));
+        if (Gate::denies('edit-users')){
+            return redirect()->route('users.index');
+        }
+        $roles = Role::all();
+        return view('users.edit', compact('user','roles'));
     }
 
     /**
@@ -67,6 +73,7 @@ class UserController extends Controller
      */
     public function update(UserRequest $request, User $user)
     {
+        $user->roles()->sync($request->get('role'));
         $hasPassword = $request->get('password');
 
         $request->merge(['password' => Hash::make($request->get('password'))]);
@@ -86,6 +93,9 @@ class UserController extends Controller
      */
     public function destroy(User  $user)
     {
+        if (Gate::denies('edit-users')){
+            return redirect()->route('users.index');
+        }
         $user->delete();
 
         return redirect()->route('users.index')->withStatus('User successfully deleted.');

@@ -20,4 +20,8 @@ class HomeController extends Controller
 
         return view('dashboard');
     }
+
+    public function action(){
+        return view('home');
+    }
 }

@@ -2,14 +2,11 @@
     <div class="sidebar-wrapper">
         <ul class="nav">
             <li @if ($pageSlug == 'dashboard') class="active " @endif>
-                <a href="{{ route('home') }}">
+                <a href="{{ route('admin') }}">
                     <i class="tim-icons icon-chart-bar-32"></i>
                     <p>Dashboard</p>
                 </a>
             </li>
-
-
-
 
             <li>
                 <a data-toggle="collapse" href="#users" {{ $section == 'users' ? 'aria-expanded=true' : '' }}>
@@ -26,12 +23,14 @@
                                 <p>My profile</p>
                             </a>
                         </li>
+
                         <li @if ($pageSlug == 'users-list') class="active " @endif>
                             <a href="{{ route('users.index')  }}">
                                 <i class="tim-icons icon-notes"></i>
                                 <p>Manage Users</p>
                             </a>
                         </li>
+
                         <li @if ($pageSlug == 'users-create') class="active " @endif>
                             <a href="{{ route('users.create')  }}">
                                 <i class="tim-icons icon-simple-add"></i>

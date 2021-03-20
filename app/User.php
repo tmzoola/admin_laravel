@@ -65,8 +65,9 @@ class User extends Authenticatable
         return $this->belongsTo(AccountRoles::class);
     }
 
-    public function hasAccountRole($role){
-        if ($this->account_roles()->where('account_types',$role)->first()){
+    public function hasAccountRole($role_id){
+
+        if ($this->where('account_id',$role_id)->first()){
             return true;
         }else{
             return false;

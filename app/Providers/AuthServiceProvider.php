@@ -32,5 +32,17 @@ class AuthServiceProvider extends ServiceProvider
         Gate::define('edit-users', function ($user){
             return $user->hasRole('admin');
         });
+
+        //Roles for user account
+        Gate::define('account_student', function ($user){
+           return $user->hasAccountRole(1);
+        });
+        Gate::define("account_public", function ($user){
+            return $user->hasAccountRole(2);
+        });
+        Gate::define("account_kid", function ($user){
+            return $user->hasAccountRole(3);
+        });
+        //end Roles for user account
     }
 }

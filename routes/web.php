@@ -15,9 +15,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Auth::routes();
-
-
 Route::get('/', 'HomeController@action')->name('home');
+
+
 
 Route::group(['middleware' => 'can:manage-users'], function () {
     Route::get('/admin', 'HomeController@index')->name('admin')->middleware('auth');

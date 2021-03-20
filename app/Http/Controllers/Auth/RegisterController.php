@@ -70,7 +70,7 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
-            'account_id'=>$data['account_type'],
+            'account_id'=>(integer)$data['account_type'],
         ]);
 
         $role = Role::select('id')->where('name', 'user')->first();

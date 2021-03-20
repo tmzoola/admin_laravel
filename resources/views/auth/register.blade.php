@@ -46,6 +46,14 @@
                             </div>
                             <input type="password" name="password_confirmation" class="form-control" placeholder="Repeat Password">
                         </div>
+                       @foreach($accounts as $account)
+
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input{{ $errors->has('account_type') ? ' has-danger' : '' }}" type="radio" name="account_type" id="inlineRadio1" value="{{$account->id}}">
+                            <label class="form-check-label" for="inlineRadio1">{{$account->account_types}}</label>
+                        </div>
+                            @include('alerts.feedback', ['field' => 'account_type'])
+                        @endforeach
                     </div>
                     <div class="card-footer">
                         <button type="submit" class="btn btn-primary btn-round btn-lg">Sign up</button>

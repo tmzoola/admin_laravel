@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\AccountRoles;
 use App\Models\Role;
 use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -53,6 +54,7 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'account_type' => ['required'],
         ]);
     }
 
@@ -68,10 +70,12 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'account_id'=>$data['account_type'],
         ]);
 
         $role = Role::select('id')->where('name', 'user')->first();
         $user->roles()->attach($role);
         return $user;
     }
+
 }

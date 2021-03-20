@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Models\AccountRoles;
 use App\Models\Role;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -19,7 +20,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password','account_id',
     ];
 
     /**
@@ -54,6 +55,18 @@ class User extends Authenticatable
 
     public function hasRole($role){
         if ($this->roles()->where('name',$role)->first()){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    public function account_roles(){
+        return $this->belongsTo(AccountRoles::class);
+    }
+
+    public function hasAccountRole($role){
+        if ($this->account_roles()->where('account_types',$role)->first()){
             return true;
         }else{
             return false;

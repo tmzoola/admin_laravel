@@ -12,6 +12,9 @@ Route::get('/', 'HomeController@action')->name('home');
 Route::get('/index', 'Pages\AccountController@index')->name('account');
 Route::get('/user/profile', 'Pages\AccountController@kids_main')->name('user_profile');
 
+Route::get('/course_content', 'Pages\AccountController@course_content')->name('course_content');
+Route::get('/courses', 'Pages\AccountController@courses')->name('courses');
+
 
 
 Route::group(['middleware' => 'can:manage-users'], function () {

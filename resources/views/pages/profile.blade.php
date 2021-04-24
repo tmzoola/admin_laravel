@@ -61,6 +61,7 @@
                     </div>
                     <div class="card-footer">
                         <button type="submit" class="genric-btn success radius">Change Password</button>
+                        <a href="{{url('logout_new')}}" class="genric-btn info radius">Logout</a>
                     </div>
                 </form>
             </div>

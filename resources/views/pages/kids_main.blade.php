@@ -7,14 +7,13 @@
 <div class="navbar navbar-inverse">
     <div class="container">
         <div class="navbar-header">
-            <!-- Button for smallest screens -->
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
 
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav pull-right mainNav">
                 <li class="c1 active"><a href="#">Home</a></li>
-                <li class="c2"><a href="#">Courses</a></li>
+                <li class="c2"><a href="{{route('courses')}}">Courses</a></li>
                 <li class="c3"><a href="#">About</a></li>
                 <li class="c6 dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Blog <b class="caret"></b></a>
@@ -29,31 +28,9 @@
 
             </ul>
         </div>
-        <!--/.nav-collapse -->
     </div>
 </div>
-<!-- /.navbar -->
 
-<!-- Header -->
-<header id="head">
-    <div class="container">
-        <div class="heading-text">
-            <h1 class="animated flipInY delay1">Incourse.uz Online learning Platform for Kids</h1> <br/>
-        </div>
-
-        <div class="fluid_container">
-            <div class="camera_wrap camera_emboss pattern_1" id="camera_wrap_4">
-                <div data-thumb="kids/images/slides/thumbs/img1.jpg" data-src="kids/images/slides/img1.jpg">
-                    <h2>We develop.</h2>
-                </div>
-                <div data-thumb="kids/images/slides/thumbs/img2.jpg" data-src="kids/images/slides/img2.jpg">
-                </div>
-                <div data-thumb="kids/images/slides/thumbs/img3.jpg" data-src="kids/images/slides/img3.jpg">
-                </div>
-            </div>
-        </div>
-    </div>
-</header>
 
 <div class="container">
     <div class="row">
@@ -63,33 +40,16 @@
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent tempus eleifend risus ut congue
                     eset nec lacus elit dor broma.</p>
                 <p><a href="#"><em>Read More</em></a></p>
-            </div><!--grey box -->
-        </div><!--/span3-->
+            </div>
+        </div>
         <div class="col-md-3">
             <div class="grey-box-icon b2">
                 <h4>Meet our Staff</h4>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent tempus eleifend risus ut congue
                     eset nec lacus elit dor broma.</p>
                 <p><a href="#"><em>Read More</em></a></p>
-            </div><!--grey box -->
-        </div><!--/span3-->
-        <div class="col-md-3">
-            <div class="grey-box-icon b3">
-                <h4>Latest Updates</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent tempus eleifend risus ut congue
-                    eset nec lacus elit dor broma.</p>
-                <p><a href="#"><em>Read More</em></a></p>
-            </div><!--grey box -->
-        </div><!--/span3-->
-        <div class="col-md-3">
-            <div class="grey-box-icon b4">
-                <h4>Placements</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent tempus eleifend risus ut congue
-                    eset nec lacus elit dor broma.</p>
-                <p><a href="#"><em>Read More →</em></a></p>
-            </div><!--grey box -->
-        </div><!--/span3-->
-    </div>
+            </div>
+        </div>
 </div>
 <section class="news-box top-margin">
     <div class="container">
@@ -104,36 +64,6 @@
                             <div class="box_inner">
                                 <div class="box">
                                     <p class="title"><h5>Developer</h5></p>
-                                    <p>Lorem ipsum dolor sit amet, conc tetu er adipi scing. Praesent ves tibuum molestie lacuiirhs. Aenean.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-12">
-                <div class="newsBox">
-                    <div class="thumbnail">
-                        <figure><img src="kids/images/news3.jpg" alt=""></figure>
-                        <div class="caption maxheight2">
-                            <div class="box_inner">
-                                <div class="box">
-                                    <p class="title"><h5>Photography   </h5></p>
-                                    <p>Lorem ipsum dolor sit amet, conc tetu er adipi scing. Praesent ves tibuum molestie lacuiirhs. Aenean.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-12">
-                <div class="newsBox">
-                    <div class="thumbnail">
-                        <figure><img src="kids/images/news4.jpg" alt=""></figure>
-                        <div class="caption maxheight2">
-                            <div class="box_inner">
-                                <div class="box">
-                                    <p class="title"><h5>Audio Editing</h5></p>
                                     <p>Lorem ipsum dolor sit amet, conc tetu er adipi scing. Praesent ves tibuum molestie lacuiirhs. Aenean.</p>
                                 </div>
                             </div>

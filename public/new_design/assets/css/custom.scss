@@ -1,0 +1,24 @@
+//@import "test.css";
+
+$brand-color: #20c997;
+$brand-color-hover: rgb(27, 173, 131);
+$brand-color-bg: #ccf3e7;
+$color-white: #fff;
+$brand-color-1: #cf0606;
+$brand-color-2: #22385a;
+
+.navbar { backdrop-filter: blur(20px) !important; }
+ nav .nav-link { font-size: 1.2rem !important; padding-left: 1rem !important; padding-top: 0.625rem !important; }
+ nav .nav-link.active { color: $brand-color !important; }
+.brand-color { color: $brand-color !important; }
+.brand-color-red { color: $brand-color-1 !important; }
+.brand-color-blue { color: $brand-color-2; }
+.bg-soft-green { background-color: $brand-color-bg; }
+.bg-white { background-color: rgba(255, 255, 255, 0.5) !important; }
+.btn-brand { background-color: $brand-color; color: $color-white;  &:hover { background-color: $brand-color-hover; color: $color-white; } }
+.btn-brand-outline { border-color: $brand-color !important; color: $brand-color;  &:hover { background-color: $brand-color; color: $color-white; } }
+.btn-brand-outline:focus  { outline: 0; -webkit-box-shadow: 0 0 0 0.25rem #CCF3E7FF!important; box-shadow: 0 0 0 0.25rem #CCF3E7FF!important; }
+.border-bottom-green { border-bottom: 2px solid $brand-color; }
+.border-bottom-red { border-bottom: 2px solid $brand-color-1; }
+.border-bottom-blue { border-bottom: 2px solid $brand-color-2; }
+.shadow-box { background-color: #f8f8f8; border-radius: 10px; }

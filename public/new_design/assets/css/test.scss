@@ -1,0 +1,128 @@
+
+$brand-color: #20c997;
+$brand-color-hover: rgb(27, 173, 131);
+$brand-color-bg: #ccf3e7;
+$color-white: #fff;
+$brand-color-1: #cf0606;
+$brand-color-2: #0f1826;
+
+.is-1, {
+
+
+  font-size: 25px;
+
+  span {
+    position: relative;
+    top: 40px;
+    left: 5px;
+  }
+
+  input {
+    background-color: transparent !important;
+    padding-left: 75px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 3px solid $brand-color-2 !important;
+    transition: 0.4s ease-out;
+  }
+
+  &:nth-child(2) input {
+    padding-left: 95px;
+
+  }
+
+}
+
+.is-1 {
+  input:focus, input:active {
+    border-bottom: 4px solid $brand-color !important;
+    outline: none !important;
+  }
+}
+
+
+
+//.bg-img-1::before{
+//
+//  content: '';
+//  background: linear-gradient(#f59393, #ee6e6e) !important;
+//  background: no-repeat;
+//  top: 280px;
+//  left: 0;
+//  width: 100%;
+//  height: 568px;
+//  position: absolute;
+//  clip-path:circle(15% at 40% 50%);
+//
+//}
+
+
+.bg-img-1::after {
+  z-index: -1;
+  content: '';
+  background: linear-gradient($brand-color-bg, $brand-color-hover) !important;
+  background: no-repeat;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  clip-path: circle(10% at 62% 60%);
+  animation: mymove 3s linear;
+  animation-iteration-count: infinite;
+
+
+}
+
+
+//@keyframes mymove {
+//  0% {
+//    clip-path: circle(10% at 62% 60%);
+//  }
+//  10% {
+//    clip-path: circle(11% at 62% 60%);
+//    opacity: 0.9;
+//  }
+//  20% {
+//    clip-path: circle(12% at 62% 60%);
+//    opacity: 0.8;
+//  }
+//  30% {
+//    clip-path: circle(13% at 62% 60%);
+//
+//    opacity: 0.7;
+//  }
+//  40% {
+//    clip-path: circle(14% at 62% 60%);
+//  }
+//  50% {
+//    clip-path: circle(13% at 62% 60%);
+//  }
+//  60% {
+//    clip-path: circle(12% at 62% 60%);
+//  }
+//  70% {
+//    clip-path: circle(11% at 62% 60%);
+//    opacity: 0;
+//  }
+//  80% {
+//    clip-path: circle(10% at 62% 60%);
+//    opacity: 1;
+//  }
+//  90% {
+//    clip-path: circle(9% at 62% 60%);
+//  }
+//  100% {
+//    clip-path: circle(10% at 62% 60%);
+//  }
+//}
+
+
+.login-1 {
+  z-index: 1111;
+  position: relative;
+  background-color: rgba(255, 255, 255, 0) !important;
+  backdrop-filter: blur(20px) !important;
+  border-radius: 10px;
+}

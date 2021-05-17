@@ -22,4 +22,8 @@ class AccountController extends Controller
     public function courses(){
         return view('pages.index');
     }
+
+    public function public_courses(){
+        return view('pages.courses.public_courses');
+    }
 }

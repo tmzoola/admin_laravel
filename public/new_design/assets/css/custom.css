@@ -1,0 +1,59 @@
+.navbar {
+  backdrop-filter: blur(20px) !important; }
+
+nav .nav-link {
+  font-size: 1.2rem !important;
+  padding-left: 1rem !important;
+  padding-top: 0.625rem !important; }
+
+nav .nav-link.active {
+  color: #20c997 !important; }
+
+.brand-color {
+  color: #20c997 !important; }
+
+.brand-color-red {
+  color: #cf0606 !important; }
+
+.brand-color-blue {
+  color: #22385a; }
+
+.bg-soft-green {
+  background-color: #ccf3e7; }
+
+.bg-white {
+  background-color: rgba(255, 255, 255, 0.5) !important; }
+
+.btn-brand {
+  background-color: #20c997;
+  color: #fff; }
+  .btn-brand:hover {
+    background-color: #1bad83;
+    color: #fff; }
+
+.btn-brand-outline {
+  border-color: #20c997 !important;
+  color: #20c997; }
+  .btn-brand-outline:hover {
+    background-color: #20c997;
+    color: #fff; }
+
+.btn-brand-outline:focus {
+  outline: 0;
+  -webkit-box-shadow: 0 0 0 0.25rem #CCF3E7FF !important;
+  box-shadow: 0 0 0 0.25rem #CCF3E7FF !important; }
+
+.border-bottom-green {
+  border-bottom: 2px solid #20c997; }
+
+.border-bottom-red {
+  border-bottom: 2px solid #cf0606; }
+
+.border-bottom-blue {
+  border-bottom: 2px solid #22385a; }
+
+.shadow-box {
+  background-color: #f8f8f8;
+  border-radius: 10px; }
+
+/*# sourceMappingURL=custom.css.map */

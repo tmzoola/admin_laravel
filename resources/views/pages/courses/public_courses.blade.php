@@ -10,7 +10,7 @@
     <!-- ===============================================-->
     <!--    Document Title-->
     <!-- ===============================================-->
-    <title class="brand-color">INLAB </title>
+    <title class="brand-color">INCOURSE </title>
 
 
     <!-- ===============================================-->
@@ -40,21 +40,21 @@
 
 <main class="main " id="top">
     <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" data-navbar-on-scroll="data-navbar-on-scroll">
-        <div class="container"><a class="navbar-brand" href="#"><span class="text-1000 fs-2 ms-2 fw-medium brand-color">INLAB</span></a>
+        <div class="container"><a class="navbar-brand" href="#"><span class="text-1000 fs-2 ms-2 fw-medium brand-color">INCOURSE</span></a>
             <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mx-auto border-bottom border-lg-bottom-0 pt-2 pt-lg-0">
-                    <li class="nav-item"><a class="nav-link  active" aria-current="page" href="#">Kurslar</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Yangliklar</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Biz haqimizda</a></li>
+                    <li class="nav-item"><a class="nav-link  active" aria-current="page" href="#">Courses</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">News</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">About US</a></li>
 
                 </ul>
                 <form class="d-flex py-3 py-lg-0">
                     <!--              <button class="btn btn-link text-1000 fw-medium order-1 order-lg-0" type="button">Sign in</button>-->
-                    <button class="btn btn-brand-outline rounded-pill order-0" type="submit">KIRISH</button>
+                    <button class="btn btn-brand-outline rounded-pill order-0" type="submit"><a href="{{ route('login') }}" style="color: black;" >Login</a></button>
                 </form>
             </div>
         </div>
@@ -68,7 +68,7 @@
         <section>
 
 
-            <h1 class="text-center brand-color-blue py-4 pb-6 border-bottom-green w-75 mx-auto" > Kurslarimiz </h1>
+            <h1 class="text-center brand-color-blue py-4 pb-6 border-bottom-green w-75 mx-auto" > Courses </h1>
 
 
 

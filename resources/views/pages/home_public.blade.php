@@ -10,7 +10,7 @@
     <!-- ===============================================-->
     <!--    Document Title-->
     <!-- ===============================================-->
-    <title class="brand-color">INLAB</title>
+    <title class="brand-color">INCOURSE</title>
 
 
     <!-- ===============================================-->
@@ -42,18 +42,28 @@
 <!-- ===============================================-->
 <main class="main" id="top">
     <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" data-navbar-on-scroll="data-navbar-on-scroll">
-        <div class="container"><a class="navbar-brand" href="#"><span class="text-1000 fs-2 ms-2 fw-medium brand-color">INLAB</span></a>
+        <div class="container"><a class="navbar-brand" href="#"><span class="text-1000 fs-2 ms-2 fw-medium brand-color">INCOURSE</span></a>
             <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mx-auto border-bottom border-lg-bottom-0 pt-2 pt-lg-0">
-                    <li class="nav-item"><a class="nav-link  active" aria-current="page" href="#">Kurslar</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Yangliklar</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Biz haqimizda</a></li>
+                    <li class="nav-item"><a class="nav-link  active" aria-current="page" href="{{route('courses')}}">Courses</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">News</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">About US</a></li>
 
                 </ul>
                 <form class="d-flex py-3 py-lg-0">
-                    <!--              <button class="btn btn-link text-1000 fw-medium order-1 order-lg-0" type="button">Sign in</button>-->
-                    <button class="btn btn-brand-outline rounded-pill order-0" type="submit">KIRISH</button>
+                    @auth()
+                        @can('manage-users')
+                            <button class="btn btn-brand-outline rounded-pill order-0" type="submit"><a href="{{ url('/admin') }}" style="color: black;" >Admin</a></button>
+                        @endcan
+                            <button class="btn btn-brand-outline rounded-pill order-0" type="submit"><a href="{{ route('user_profile') }}" style="color: black;" >My page</a></button>
+
+                    @endauth
+                    @guest()
+                            <button class="btn btn-brand-outline rounded-pill order-0" type="submit"><a href="{{ route('login') }}" style="color: black;" >Login</a></button>
+
+                    @endguest
+
                 </form>
             </div>
         </div>
@@ -149,50 +159,6 @@
 
 
 
-    <!-- ============================================-->
-    <!-- <section> begin ============================-->
-    <section class="pt-4 pt-md-6">
-
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-5 col-lg-7 text-lg-center"><img class="img-fluid mb-5 mb-md-0" src="assets/img/illustrations/2.png" alt="" /></div>
-                <div class="col-md-7 col-lg-5 text-center text-md-start">
-                    <h2>We Provide Many <br />Features You Can Use</h2>
-                    <p> You can explore the features that we provide with fun and have their own functions each feature.</p>
-                    <div class="d-flex">
-                        <svg class="bi bi-check-circle-fill" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#20c997" viewBox="0 0 16 16">
-                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"></path>
-                        </svg>
-                        <p class="ms-2">Powerfull online protection.</p>
-                    </div>
-                    <div class="d-flex">
-                        <svg class="bi bi-check-circle-fill" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#20c997" viewBox="0 0 16 16">
-                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"></path>
-                        </svg>
-                        <p class="ms-2">Internet without borders.</p>
-                    </div>
-                    <div class="d-flex">
-                        <svg class="bi bi-check-circle-fill" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#20c997" viewBox="0 0 16 16">
-                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"></path>
-                        </svg>
-                        <p class="ms-2">Supercharged VPN.</p>
-                    </div>
-                    <div class="d-flex">
-                        <svg class="bi bi-check-circle-fill" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#20c997" viewBox="0 0 16 16">
-                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"></path>
-                        </svg>
-                        <p class="ms-2">Internet without borders.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- end of .container-->
-
-    </section>
-    <!-- <section> close ============================-->
-    <!-- ============================================-->
-
-
 
 
     <!-- ============================================-->
@@ -236,7 +202,7 @@
                                 </li>
                             </ul>
                             <div class="text-center my-5">
-                                <h2 class="mb-3">Free
+                                <h2 class="mb-3">
                                 </h2>
                                 <button class="btn btn-brand-outline rounded-pill" type="submit">Sign Up </button>
                             </div>
@@ -325,7 +291,7 @@
                             <div class="text-center my-5">
                                 <h2 class="mb-3">$12<span class="text-900">/mo</span>
                                 </h2>
-                                <button class="btn btn-brand hover-top btn-glow rounded-pill border-0" type="submit">Sign Up</button>
+                                <button class="btn btn-brand-outline  rounded-pill" type="submit">Sign Up</button>
                             </div>
                         </div>
                     </div>
@@ -341,30 +307,10 @@
 
 
 
-    <!-- ============================================-->
-    <!-- <section> begin ============================-->
-    <section class="bg-100 py-7 text-center">
-
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-md-8 col-lg-5">
-                    <h2>Huge Global Network<br />of Fast Learning</h2>
-                    <p>Buy and watch Latest courses everywhere to make it easier for you </p>
-                </div>
-                <div class="pt-8"><img class="img-fluid" src="{{asset('new_design/assets/img/illustrations/1.png')}}" alt="" /></div>
-            </div>
-        </div>
-        <!-- end of .container-->
-
-    </section>
-    <!-- <section> close ============================-->
-    <!-- ============================================-->
 
 
 
 
-    <!-- ============================================-->
-    <!-- <section> begin ============================-->
     <section class="py-5 bg-100">
 
         <div class="container">
@@ -376,17 +322,10 @@
                 <div class="col-6 col-sm-4 col-md-2 mb-2 mb-sm-0"><img class="img-fluid" src="{{asset('new_design/assets/img/gallery/spotify.png')}}" alt="" height="50" /></div>
             </div>
         </div>
-        <!-- end of .container-->
 
     </section>
-    <!-- <section> close ============================-->
-    <!-- ============================================-->
 
 
-
-
-    <!-- ============================================-->
-    <!-- <section> begin ============================-->
     <section class="py-7">
 
         <div class="container">
@@ -644,8 +583,8 @@
 
         <div class="container">
             <div class="row">
-                <div class="col-12 col-lg-4 mb-3"><a href="#"><span class="d-inline-block text-1000 fs-3 brand-color ms-2 fw-medium lh-base">INLAB</span></a>
-                    <p class="my-3"> <span class="fw-medium brand-color">INLAB </span>is a private virtual network that<br />has unique features and has high security. </p>
+                <div class="col-12 col-lg-4 mb-3"><a href="#"><span class="d-inline-block text-1000 fs-3 brand-color ms-2 fw-medium lh-base">INCOURSE</span></a>
+                    <p class="my-3"> <span class="fw-medium brand-color">INCOURSE</span>is a private virtual network that<br />has unique features and has high security. </p>
                     <ul class="list-unstyled list-inline">
                         <li class="list-inline-item"><a class="text-decoration-none" href="#!">
                                 <svg class="bi bi-facebook" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#20c997" viewBox="0 0 16 16">
@@ -660,7 +599,7 @@
                                     <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"> </path>
                                 </svg></a></li>
                     </ul>
-                    <p class="text-400 my-3">&copy; 2020 Your Company</p>
+                    <p class="text-400 my-3">&copy; 2021 Your Company</p>
                 </div>
                 <div class="col-6 col-sm-4 col-lg-3 mb-3">
                     <h5 class="lh-lg">product </h5>

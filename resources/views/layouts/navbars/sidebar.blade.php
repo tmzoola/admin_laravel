@@ -40,6 +40,30 @@
                     </ul>
                 </div>
             </li>
+            <li>
+                <a data-toggle="collapse" href="#media" {{ $section == 'users' ? 'aria-expanded=true' : '' }}>
+                    <i class="tim-icons icon-camera-18" ></i>
+                    <span class="nav-link-text">Media</span>
+                    <b class="caret mt-1"></b>
+                </a>
+
+                <div class="collapse {{ $section == 'users' ? 'aria-expanded=true' : '' }}" id="media">
+                    <ul class="nav pl-4">
+                        <li @if ($pageSlug == 'profile') class="active " @endif>
+                            <a href="{{ route('course_name')  }}">
+                                <i class="tim-icons icon-simple-add"></i>
+                                <p>New Course </p>
+                            </a>
+                        </li>
+                        <li @if ($pageSlug == 'profile') class="active " @endif>
+                            <a href="{{ route('video_upload')  }}">
+                                <i class="tim-icons icon-triangle-right-17"></i>
+                                <p>Video upload</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
         </ul>
     </div>
 </div>

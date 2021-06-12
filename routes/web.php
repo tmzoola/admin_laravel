@@ -35,3 +35,16 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('typography', ['as' => 'pages.typography', 'uses' => 'PageController@typography']);
 });
 Route::get('/logout_new', 'Auth\LogoutController@logout');
+
+// Video Create Routes start
+Route::get('/file/create', 'DocumentController@create')->name('video_upload');
+Route::post('/files', 'DocumentController@store');
+Route::get('/files', 'DocumentController@index');
+Route::get('/files/{id}','DocumentController@show');
+Route::get('/file/download/{file}','DocumentController@download');
+// Video Create Routes end
+
+
+// Course Name Create start
+Route::get('/course/name/create', 'CourseNameController@create')->name('course_name');
+Route::post('/course_names', 'CourseNameController@store');

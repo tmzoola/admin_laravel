@@ -3,11 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\CourseMember;
-use App\Models\CourseName;
-use App\Models\Document;
 use Illuminate\Http\Request;
 
-class CourseNameController extends Controller
+class CourseMemberController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -24,9 +22,10 @@ class CourseNameController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($id)
     {
-        return view('pages.course_name.create');
+        $course_id = (integer)$id;
+        return view('pages.course_member.create',compact('course_id'));
     }
 
     /**
@@ -37,10 +36,13 @@ class CourseNameController extends Controller
      */
     public function store(Request $request)
     {
-        $data = new CourseName();
+        $data = new CourseMember();
         $data->name = $request->name;
+        $data->course_id = (integer)$request->id;
+        $data->user_id = auth()->user()->id;
+        $data->email = auth()->user()->email;
         $data->save();
-        return redirect()->back();
+        return url('/courses');
     }
 
     /**
@@ -51,23 +53,7 @@ class CourseNameController extends Controller
      */
     public function show($id)
     {
-        if(isset(auth()->user()->id)){
-            $member = CourseMember::where('user_id',auth()->user()->id)->first();
-            if (isset($member)){
-                $course_id = $member->course_id;
-                $file = CourseName::select('name','id')->where('id',(integer)$id)->first();
-                $data = Document::where('course_name_id', (integer)$id)->get();
-                return view('pages.courses.course_in',compact('data','file','course_id'));
-            }
-            $file = CourseName::select('name','id')->where('id',(integer)$id)->first();
-            $data = Document::where('course_name_id', (integer)$id)->get();
-            return view('pages.courses.course_in',compact('data','file'));
-        }
-
-        $file = CourseName::select('name','id')->where('id',(integer)$id)->first();
-        $data = Document::where('course_name_id', (integer)$id)->get();
-        return view('pages.courses.course_in',compact('data','file'));
-
+        //
     }
 
     /**

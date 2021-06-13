@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Pages;
 
 use App\Http\Controllers\Controller;
+use App\Models\CourseName;
 use Illuminate\Http\Request;
 
 class AccountController extends Controller
@@ -24,7 +25,8 @@ class AccountController extends Controller
     }
 
     public function public_courses(){
-        return view('pages.courses.public_courses');
+        $data = CourseName::all();
+        return view('pages.courses.public_courses',compact('data'));
     }
 
 }

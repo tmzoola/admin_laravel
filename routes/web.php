@@ -48,3 +48,10 @@ Route::get('/file/download/{file}','DocumentController@download');
 // Course Name Create start
 Route::get('/course/name/create', 'CourseNameController@create')->name('course_name');
 Route::post('/course_names', 'CourseNameController@store');
+Route::get('/course_names/{id}','CourseNameController@show');
+
+//Course Name Create start
+
+//Course Member Create start
+Route::get('/course/member/{id}','CourseMemberController@create');
+Route::post('/course/member','CourseMemberController@store');

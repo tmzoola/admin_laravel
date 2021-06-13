@@ -60,28 +60,18 @@
         </div>
     </nav>
 
-
     <div class="container bg-img-1 px-2">
 
-
-
         <section>
-
-
             <h1 class="text-center brand-color-blue py-4 pb-6 border-bottom-green w-75 mx-auto" > Courses </h1>
 
-
-
-
-
             <div class="row d-flex flex-wrap mt-5 justify-content-center mx-1 ">
-
+                @foreach($data as $row)
                 <div class="col-12  col-md-5s  col-lg-5  mt-auto p-3 pt-lg-5 m-4 m-md-3 shadow-box">
 
 
                     <div class="d-flex flex-nowrap justify-content-between align-items-end ">
-                        <h2 class="px-2">Fontend<br>
-                            Development</h2>
+                        <h2 class="px-2">{{$row->name}}</h2>
 
 
                         <img class="w-25" src="{{asset('new_design/assets/img/illustrations/a-2.png')}}" alt="">
@@ -92,179 +82,17 @@
 
                         <p class="fs-1 m-0">Davomiyligi <br><span
                                 class="brand-color-2 fw-semi-bold fs-2"> 2 ta modul </span></p>
-
-                        <a href="#" class="btn btn-brand-outline fs-1">
-
-                            Ba’tafsil
+                        <a href="/course_names/{{$row->id}}" class="btn btn-brand-outline fs-1">
+                           More
                         </a>
 
                     </div>
 
 
                 </div>
-
-                <div class="col-12  col-md-5s  col-lg-5  mt-auto p-3 pt-lg-5 m-4 m-md-3 shadow-box">
-
-
-                    <div class="d-flex flex-nowrap justify-content-between align-items-end ">
-                        <h2 class="px-2">Fontend<br>
-                            Development</h2>
-
-
-                        <img class="w-25" src="{{asset('new_design/assets/img/illustrations/a-2.png')}}" alt="">
-                    </div>
-                    <hr class="w-100 border-bottom-green">
-
-                    <div class="d-flex flex-nowrap justify-content-between align-items-center  ">
-
-                        <p class="fs-1 m-0">Davomiyligi <br><span
-                                class="brand-color-2 fw-semi-bold fs-2"> 2 ta modul </span></p>
-
-                        <a href="#" class="btn btn-brand-outline fs-1">
-
-                            Ba’tafsil
-                        </a>
-
-                    </div>
-
-
-                </div>
-
-                <div class="col-12  col-md-5s  col-lg-5  mt-auto p-3 pt-lg-5 m-4 m-md-3 shadow-box">
-
-
-                    <div class="d-flex flex-nowrap justify-content-between align-items-end ">
-                        <h2 class="px-2">Fontend<br>
-                            Development</h2>
-
-
-                        <img class="w-25" src="{{asset('new_design/assets/img/illustrations/a-2.png')}}" alt="">
-                    </div>
-                    <hr class="w-100 border-bottom-green">
-
-                    <div class="d-flex flex-nowrap justify-content-between align-items-center  ">
-
-                        <p class="fs-1 m-0">Davomiyligi <br><span
-                                class="brand-color-2 fw-semi-bold fs-2"> 2 ta modul </span></p>
-
-                        <a href="#" class="btn btn-brand-outline fs-1">
-
-                            Ba’tafsil
-                        </a>
-
-                    </div>
-
-
-                </div>
-
-                <div class="col-12  col-md-5s  col-lg-5  mt-auto p-3 pt-lg-5 m-4 m-md-3 shadow-box">
-
-
-                    <div class="d-flex flex-nowrap justify-content-between align-items-end ">
-                        <h2 class="px-2">Fontend<br>
-                            Development</h2>
-
-
-                        <img class="w-25" src="{{asset('new_design/assets/img/illustrations/a-2.png')}}" alt="">
-                    </div>
-                    <hr class="w-100 border-bottom-green">
-
-                    <div class="d-flex flex-nowrap justify-content-between align-items-center  ">
-
-                        <p class="fs-1 m-0">Davomiyligi <br><span
-                                class="brand-color-2 fw-semi-bold fs-2"> 2 ta modul </span></p>
-
-                        <a href="#" class="btn btn-brand-outline fs-1">
-
-                            Ba’tafsil
-                        </a>
-
-                    </div>
-
-
-                </div>
-
-                <div class="col-12  col-md-5s  col-lg-5  mt-auto p-3 pt-lg-5 m-4 m-md-3 shadow-box">
-
-
-                    <div class="d-flex flex-nowrap justify-content-between align-items-end ">
-                        <h2 class="px-2">Fontend<br>
-                            Development</h2>
-
-
-                        <img class="w-25" src="{{asset('new_design/assets/img/illustrations/a-2.png')}}" alt="">
-                    </div>
-                    <hr class="w-100 border-bottom-green">
-
-                    <div class="d-flex flex-nowrap justify-content-between align-items-center  ">
-
-                        <p class="fs-1 m-0">Davomiyligi <br><span
-                                class="brand-color-2 fw-semi-bold fs-2"> 2 ta modul </span></p>
-
-                        <a href="#" class="btn btn-brand-outline fs-1">
-
-                            Ba’tafsil
-                        </a>
-
-                    </div>
-
-
-                </div>
-
-                <div class="col-12  col-md-5s  col-lg-5  mt-auto p-3 pt-lg-5 m-4 m-md-3 shadow-box">
-
-
-                    <div class="d-flex flex-nowrap justify-content-between align-items-end ">
-                        <h2 class="px-2">Fontend<br>
-                            Development</h2>
-
-
-                        <img class="w-25" src="{{asset('new_design/assets/img/illustrations/a-2.png')}}" alt="">
-                    </div>
-                    <hr class="w-100 border-bottom-green">
-
-                    <div class="d-flex flex-nowrap justify-content-between align-items-center  ">
-
-                        <p class="fs-1 m-0">Davomiyligi <br><span
-                                class="brand-color-2 fw-semi-bold fs-2"> 2 ta modul </span></p>
-
-                        <a href="#" class="btn btn-brand-outline fs-1">
-
-                            Ba’tafsil
-                        </a>
-
-                    </div>
-
-
-                </div>
-
-                <div class="col-12  col-md-5s  col-lg-5  mt-auto p-3 pt-lg-5 m-4 m-md-3 shadow-box">
-
-
-                    <div class="d-flex flex-nowrap justify-content-between align-items-end ">
-                        <h2 class="px-2">Fontend<br>
-                            Development</h2>
-
-
-                        <img class="w-25" src="{{asset('new_design/assets/img/illustrations/a-2.png')}}" alt="">
-                    </div>
-                    <hr class="w-100 border-bottom-green">
-
-                    <div class="d-flex flex-nowrap justify-content-between align-items-center  ">
-
-                        <p class="fs-1 m-0">Davomiyligi <br><span
-                                class="brand-color-2 fw-semi-bold fs-2"> 2 ta modul </span></p>
-
-                        <a href="#" class="btn btn-brand-outline fs-1">
-
-                            Ba’tafsil
-                        </a>
-
-                    </div>
-
-
-                </div>
+                @endforeach
             </div>
+
 
         </section>
 

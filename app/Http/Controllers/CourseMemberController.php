@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\CourseMember;
+use App\Models\AssignmentUpload;
+use App\Models\CourseName;
+use App\Models\StudentAssignment;
 use Illuminate\Http\Request;
 
 class CourseMemberController extends Controller
@@ -14,7 +17,9 @@ class CourseMemberController extends Controller
      */
     public function index()
     {
-        //
+        $courses = CourseName::all();
+
+        return view('users.courses',compact('courses'));
     }
 
     /**
@@ -37,10 +42,21 @@ class CourseMemberController extends Controller
     public function store(Request $request)
     {
         $data = new CourseMember();
+        $student = new StudentAssignment();
+
+
+
         $data->name = $request->name;
         $data->course_id = (integer)$request->id;
         $data->user_id = auth()->user()->id;
         $data->email = auth()->user()->email;
+
+        if (auth()->user()->account_id == 2){
+            $student->name = $request->name;
+            $student->user_id = auth()->user()->id;
+            $student->save();
+        }
+
         $data->save();
         return url('/courses');
     }
@@ -53,7 +69,9 @@ class CourseMemberController extends Controller
      */
     public function show($id)
     {
-        //
+        $members = CourseMember::where('course_id',(integer)$id)->get();
+        $count = count($members);
+        return view('users.show',compact('members', 'count'));
     }
 
     /**
@@ -64,7 +82,8 @@ class CourseMemberController extends Controller
      */
     public function edit($id)
     {
-        //
+       $assignment = AssignmentUpload::where('video_id',(integer)$id)->first();
+       return view('pages.assignment.task',compact('assignment'));
     }
 
     /**
@@ -74,7 +93,7 @@ class CourseMemberController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update( $id)
     {
         //
     }

@@ -64,6 +64,24 @@
                     </ul>
                 </div>
             </li>
+            <li>
+                <a data-toggle="collapse" href="#mentors" {{ $section == 'users' ? 'aria-expanded=true' : '' }}>
+                    <i class="tim-icons icon-bullet-list-67" ></i>
+                    <span class="nav-link-text">Course</span>
+                    <b class="caret mt-1"></b>
+                </a>
+
+                <div class="collapse {{ $section == 'courses' ? 'aria-expanded=true' : '' }}" id="mentors">
+                    <ul class="nav pl-4">
+                        <li @if ($pageSlug == 'profile') class="active " @endif>
+                            <a href="{{ route('admin_courses')  }}">
+                                <i class="tim-icons icon-double-right"></i>
+                                <p>Course List</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
         </ul>
     </div>
 </div>

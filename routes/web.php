@@ -19,6 +19,8 @@ Route::get('/courses', 'Pages\AccountController@public_courses')->name('courses'
 
 Route::group(['middleware' => 'can:manage-users'], function () {
     Route::get('/admin', 'HomeController@index')->name('admin')->middleware('auth');
+    Route::get('/admin/courses', 'CourseMemberController@index')->name('admin_courses');
+    Route::get('/admin/courses/{id}', 'CourseMemberController@show');
     Route::resources([
         'users' => 'UserController'
     ]);
@@ -49,9 +51,13 @@ Route::get('/file/download/{file}','DocumentController@download');
 Route::get('/course/name/create', 'CourseNameController@create')->name('course_name');
 Route::post('/course_names', 'CourseNameController@store');
 Route::get('/course_names/{id}','CourseNameController@show');
+Route::get('/course/videos_list/{id}','CourseNameController@videos_admin');
+Route::get('/admin/create/{id}','CourseNameController@update');
+Route::post('/admin/create','CourseNameController@edit')->name('course_task');
 
 //Course Name Create start
 
 //Course Member Create start
 Route::get('/course/member/{id}','CourseMemberController@create');
+Route::get('/course/assignment/{id}','CourseMemberController@edit');
 Route::post('/course/member','CourseMemberController@store');

@@ -23,16 +23,9 @@
                                 <nav>
                                     <ul id="navigation">
                                         <li class="active" ><a href="/">Home</a></li>
-                                        <li><a href="">Courses</a></li>
-                                        <li><a href="">About</a></li>
-                                        <li><a href="#">Blog</a>
-                                            <ul class="submenu">
-                                                <li><a href="">Blog</a></li>
-                                                <li><a href="">Blog Details</a></li>
-                                                <li><a href="">Element</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="">Contact</a></li>
+                                        <li><a href="/courses">Courses</a></li>
+                                        <li><a href="">News</a></li>
+                                        <li><a href="">About Us</a></li>
                                         @auth()
                                             @can('manage-users')
                                                 <li class="button-header margin-left "><a href="{{ url('/admin') }}" class="btn btn3">Admin</a></li>
@@ -68,7 +61,7 @@
                     <div class="row">
                         <div class="col-xl-8 col-lg-11 col-md-12">
                             <div class="hero__caption hero__caption2">
-                                <h1 data-animation="bounceIn" data-delay="0.2s">Courses</h1>
+                                <h2 data-animation="bounceIn" style="color: white" data-delay="0.2s">InCourse is unique online learning platform</h2>
                                 <!-- breadcrumb Start-->
                                 <nav aria-label="breadcrumb">
                                     <ol class="breadcrumb">
@@ -178,7 +171,7 @@
                             <h4 class="widget_title" style="color: #2d2d2d;">Category</h4>
                             <ul class="list cat-list">
                                 <li>
-                                    <a href="{{route('course_content')}}" class="d-flex">
+                                    <a href="/courses" class="d-flex">
                                         <p>My courses</p>
                                         <p>(1)</p>
                                     </a>
